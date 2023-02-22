@@ -15,6 +15,7 @@ for (; letter <= 'z'; letter++)
 {
 _putchar(letter);
 }
+letter = 'a';
 _putchar('\n');
 }
 }
