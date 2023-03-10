@@ -1,5 +1,4 @@
 #!/bin/bash
-c_files=( *.c )
-gcc -c "${c_files[@]}"
+gcc -Wall -Werror -Wextra -pedantic -c *.c
 ar rcs liball.a *.o
 rm -f *.o
