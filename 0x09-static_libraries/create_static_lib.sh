@@ -1,4 +1,5 @@
 #!/bin/bash
-gcc -c *.c
-ar rc liball.a *.o
-ranlib liball.a
+c_files=( *.c )
+gcc -c "${c_files[@]}"
+ar rcs liball.a *.o
+rm -f *.o
