@@ -1,37 +1,21 @@
 #include "main.h"
 
 /**
- * binary_to_uint - converts a binary number to an
- * unsigned int.
- * @b: binary.
- *
- * Return: unsigned int.
+ * print_binary - Prints the binary representation of a number
+ * @n: Number to print in binary
  */
-unsigned int binary_to_uint(const char *b)
+void print_binary(unsigned long int n)
 {
-	unsigned int ui;
-	int len, base_two;
+    unsigned long int mask = 1;
+    int bit_pos = 0;
 
-	if (!b)
-		return (0);
+    /* Find the position of the most significant bit */
+    while ((n >> bit_pos) > 0)
+        bit_pos++;
 
-	ui = 0;
-
-	for (len = 0; b[len] != '\0'; len++)
-		;
-
-	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
-	{
-		if (b[len] != '0' && b[len] != '1')
-		{
-			return (0);
-		}
-
-		if (b[len] & 1)
-		{
-			ui += base_two;
-		}
-	}
-
-	return (ui);
+    /* Print the bits in reverse order */
+    while (bit_pos--)
+    {
+        putchar(((n & (mask << bit_pos)) > 0) + '0');
+    }
 }
