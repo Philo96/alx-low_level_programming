@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "main.h"
+
 int main(void)
 {
     int n;
@@ -13,4 +16,3 @@ int main(void)
     }
     return (0);
 }
-
